@@ -1,0 +1,6 @@
+{
+  "name": "Chrono Quest: One Shot Tonight — Simple Present",
+  "description": "Jogo 3D AAA educacional de Língua Inglesa: Simple Present e transformação de perguntas com DO/DOES, exploração de Chrono City, avaliação e trilha sonora One Shot Tonight.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

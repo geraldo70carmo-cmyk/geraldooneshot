@@ -1,0 +1,969 @@
+# CHRONO QUEST: ONE SHOT TONIGHT
+## SIMPLE PRESENT — AAA EDUCATIONAL 3D GAME
+
+Atue como uma equipe profissional composta por diretor criativo de jogos AAA, game designer, desenvolvedor especialista em jogos 3D, engenheiro de software React/TypeScript, especialista em Three.js, designer de interface, desenvolvedor de jogos em primeira pessoa e especialista em avaliação educacional.
+
+Crie um aplicativo web educacional completo, funcional, interativo e visualmente impressionante chamado:
+
+**CHRONO QUEST: ONE SHOT TONIGHT — SIMPLE PRESENT**
+
+O jogo será utilizado pelo professor Geraldo para avaliar seus alunos de Língua Inglesa. O conteúdo didático obrigatório é o SIMPLE PRESENT TENSE, especificamente a transformação de frases afirmativas em perguntas utilizando DO e DOES.
+
+Não quero apenas uma página de apresentação, um protótipo visual ou uma demonstração com botões sem função. Quero um jogo efetivamente jogável, com ambientes tridimensionais, exploração, interação, fases, desafios gramaticais, avaliação automática e relatório final.
+
+O objetivo visual é alcançar a sensação de um jogo AAA de ficção científica, respeitando as limitações reais de execução de um jogo 3D em navegador.
+
+Toda a interface e as instruções para os alunos devem estar em português brasileiro. As frases, perguntas, respostas e exemplos de inglês devem permanecer em inglês, acompanhados das respectivas traduções quando especificado.
+
+---
+
+# 1. CONCEITO DO JOGO
+
+O jogador entra em uma cidade futurista chamada Chrono City, uma metrópole noturna repleta de torres tecnológicas, portais, corredores iluminados, laboratórios, plataformas e enormes portões eletrônicos.
+
+A cidade perdeu sua energia gramatical. Para reativar seus setores e abrir o portal central, o jogador precisa completar 16 missões de inglês.
+
+Cada missão apresenta uma frase afirmativa em Simple Present. O jogador deve transformar a frase em uma pergunta correta, utilizando DO ou DOES e respeitando a forma básica do verbo principal.
+
+A cada etapa, um novo setor da cidade é desbloqueado visualmente. Ao concluir as 16 questões, o estudante chega ao portal final e recebe seu relatório de desempenho.
+
+A atmosfera deverá ser cinematográfica, tecnológica, envolvente e motivadora, sem violência explícita. A dificuldade estará nos desafios linguísticos, na exploração e na progressão do jogo.
+
+O jogo deve funcionar como um instrumento de avaliação escolar de verdade, e não somente como entretenimento.
+
+# 2. IDENTIDADE VISUAL AAA
+
+Crie uma direção artística original, inspirada em jogos modernos de ficção científica e aventura em primeira pessoa, sem copiar personagens, logotipos ou cenários de franquias existentes.
+
+Use:
+
+- Cidade futurista noturna com arquitetura tridimensional.
+- Torres muito altas, pontes suspensas e passarelas.
+- Portões holográficos que representam as etapas do aprendizado.
+- Iluminação cinematográfica, névoa volumétrica simulada, partículas, reflexos e efeitos de luz.
+- Materiais metálicos, superfícies de vidro, painéis digitais e pisos tecnológicos.
+- Animações de abertura de portões, ativação de terminais e conclusão de missões.
+- Câmera em primeira pessoa, com movimentação suave.
+- Interface futurista elegante, com tipografia legível.
+- Efeitos sonoros discretos para interações, acertos, conclusão de setores e desbloqueios.
+- Identidade visual consistente em menus, fases, avaliações e relatórios.
+
+A apresentação deve transmitir qualidade, profundidade e imersão.
+
+Não utilize apenas cartões flutuantes sobre um fundo plano para simular o jogo. O cenário principal precisa ser realmente tridimensional.
+
+Utilize Three.js ou React Three Fiber, conforme a compatibilidade do ambiente do Google AI Studio. Escolha dependências estáveis e compatíveis. Gere os ambientes com geometria 3D, materiais, luzes e efeitos implementáveis no próprio projeto, sem depender de modelos 3D pagos.
+
+Priorize uma execução estável em computadores escolares comuns. Utilize carregamento eficiente, limite o número de objetos simultâneos, reduza efeitos quando necessário e ofereça uma opção gráfica leve.
+
+Se algum efeito avançado não for viável, implemente uma alternativa funcional e visualmente coerente. Não invente funcionalidades que não estejam funcionando.
+
+# 3. TECNOLOGIAS E ARQUITETURA
+
+Desenvolva a versão principal como aplicativo web.
+
+Utilize:
+
+- React e TypeScript para a interface.
+- Three.js ou React Three Fiber para o ambiente tridimensional.
+- React Three Drei, quando necessário e compatível.
+- CSS moderno para menus, painéis, formulários e interfaces do jogo.
+- Node.js no servidor, caso necessário para salvar e consultar os resultados centralizados.
+- Armazenamento persistente para os relatórios, preferencialmente Firebase/Firestore quando a integração puder ser configurada corretamente.
+- Persistência local como alternativa funcional para instalações sem banco de dados.
+- Exportação de resultados para CSV e JSON.
+
+Organize o projeto em componentes e arquivos separados. Mantenha as questões, os gabaritos e as regras de avaliação em módulos próprios, facilitando futuras atualizações pelo professor.
+
+Não exponha chaves de API no navegador. Não torne a API Gemini necessária para corrigir as 16 questões. A correção deve ser determinística, gratuita por questão e funcionar mesmo sem conexão com um modelo de inteligência artificial.
+
+Não substitua os recursos solicitados por botões decorativos ou funções simuladas.
+
+# 4. MENU PRINCIPAL
+
+Crie uma tela inicial cinematográfica, com a cidade futurista ao fundo e o portal principal ao centro.
+
+Exiba o título:
+
+CHRONO QUEST
+ONE SHOT TONIGHT
+
+Subtítulo:
+
+ENGLISH MISSION — SIMPLE PRESENT QUESTIONS
+
+O menu deve apresentar os seguintes campos:
+
+- Nome completo do estudante.
+- Turma.
+- Escola, opcional.
+- Modo de jogo.
+- Configurações de áudio.
+- Configurações gráficas.
+
+Inclua dois modos distintos.
+
+**MODO AVALIAÇÃO**
+
+Utilizado para avaliar oficialmente os alunos. Apresenta as 16 questões definidas neste projeto, registra apenas a primeira resposta enviada em cada questão e calcula o resultado de acordo com o gabarito. Não mostra dicas nem entrega a resposta correta durante a avaliação.
+
+**MODO TREINO**
+
+Utilizado para estudar antes da avaliação. Permite tentar novamente, oferece dicas e explica os erros. O modo treino não deve gerar uma nota oficial nem misturar seus resultados com os resultados da avaliação.
+
+O estudante deverá informar seu nome completo e sua turma antes de iniciar o modo avaliação.
+
+Mostre instruções iniciais em português, explicando como caminhar, interagir e responder às questões.
+
+# 5. CONTROLES EM PRIMEIRA PESSOA
+
+Implemente uma experiência de exploração 3D com controles simples.
+
+No computador:
+
+- W: avançar.
+- S: recuar.
+- A: movimentar para a esquerda.
+- D: movimentar para a direita.
+- Mouse: olhar ao redor.
+- E: interagir com terminais, portões e objetos.
+- ESC: pausar ou liberar o cursor.
+- Clique do mouse: selecionar e utilizar os elementos da interface.
+
+Implemente a captura do mouse por meio de um mecanismo apropriado para navegação em primeira pessoa. Apresente instruções claras e libere o cursor quando o jogador pressionar ESC.
+
+O jogador deve conseguir caminhar pelo ambiente sem atravessar paredes, pisos ou objetos sólidos importantes.
+
+Quando estiver diante de um terminal de missão, mostre uma indicação visual como:
+
+[ E ] INTERAGIR
+
+Ao pressionar E, abra a interface da questão sem reiniciar a posição do jogador ou perder o estado da fase.
+
+Inclua controles alternativos para dispositivos móveis, com joystick virtual, botão de interação e ajuste de câmera por toque.
+
+Se o ambiente 3D não puder ser carregado, mostre uma mensagem compreensível e disponibilize uma alternativa de navegação funcional, preservando a avaliação.
+
+# 6. MAPA, SETORES E PROGRESSÃO
+
+Organize as 16 questões obrigatórias em oito setores tridimensionais, com duas questões por setor.
+
+SETOR 1 — NEON GATE
+Tema: entrada da cidade.
+Questões: 1 e 2.
+
+SETOR 2 — MERCHANDISE DISTRICT
+Tema: comércio futurista.
+Questões: 3 e 4.
+
+SETOR 3 — TRANSIT STATION
+Tema: transporte e movimentação.
+Questões: 5 e 6.
+
+SETOR 4 — OBSERVATION TOWER
+Tema: torre de observação.
+Questões: 7 e 8.
+
+SETOR 5 — NEW YORK PORTAL
+Tema: cidade e comunicação.
+Questões: 9 e 10.
+
+SETOR 6 — OUTER CITY
+Tema: estradas e exploração urbana.
+Questões: 11 e 12.
+
+SETOR 7 — MARKET CORE
+Tema: centro comercial e serviços.
+Questões: 13 e 14.
+
+SETOR 8 — FINAL CHRONO GATE
+Tema: núcleo central da cidade.
+Questões: 15 e 16.
+
+Cada setor deve apresentar um cenário visual diferente, mas manter a mesma identidade artística.
+
+Distribua terminais de missão ao longo dos cenários. O estudante deve alcançar e interagir com os terminais para responder às perguntas.
+
+O mapa deve apresentar a progressão das missões e o número de questões concluídas. Utilize indicadores discretos de progresso, por exemplo:
+
+QUESTÃO 05/16
+SETOR 3/8
+
+Não permita pular questões no modo avaliação. Não obrigue o estudante a acertar para continuar: toda resposta enviada deve ser registrada e a missão seguinte deve ficar acessível. Assim, todos conseguem concluir a prova e recebem uma nota válida.
+
+No modo treino, ofereça progressão com feedback imediato.
+
+O jogo deve ter início, pausa, retomada, reinício confirmado, conclusão e tela de resultados. Não perca o progresso acidentalmente ao abrir e fechar uma questão.
+
+# 7. CONTEÚDO GRAMATICAL OBRIGATÓRIO
+
+Apresente uma breve tela didática antes do jogo começar.
+
+Título:
+
+SIMPLE PRESENT TENSE — QUESTIONS
+
+Explicação em português:
+
+Para formar perguntas no Simple Present, utilizamos DO ou DOES antes do sujeito. Depois de DOES, o verbo principal volta à forma básica, sem -s, -es ou -ies.
+
+Utilize esta referência:
+
+DO:
+- Do I study?
+- Do you study?
+- Do we study?
+- Do they study?
+
+DOES:
+- Does he study?
+- Does she study?
+- Does it study?
+
+Regra prática:
+
+I, YOU, WE, THEY → DO
+
+HE, SHE, IT → DOES
+
+Com DOES, o verbo principal fica na forma básica.
+
+Exemplos:
+
+She lives here.
+Does she live here?
+
+He goes to school.
+Does he go to school?
+
+That company buys merchandise.
+Does that company buy merchandise?
+
+Explique também que um sujeito singular que não seja um pronome pessoal, como “the class”, “the store” ou “that company”, utiliza DOES.
+
+Não altere o significado da frase original ao transformá-la em pergunta.
+
+# 8. BANCO OFICIAL DAS 16 QUESTÕES
+
+Estas 16 questões são o conteúdo oficial da avaliação. Utilize exatamente as frases e suas traduções, sem substituir verbos, modificar complementos ou inventar novos itens para compor a nota.
+
+Cada questão deve exibir:
+
+1. O número da questão.
+2. A frase afirmativa em inglês.
+3. A tradução em português logo abaixo.
+4. Uma caixa para o aluno digitar a frase interrogativa completa.
+5. Um botão “CONFIRMAR RESPOSTA”.
+6. Um botão ou comando “PRÓXIMA MISSÃO” que só seja liberado após o envio da resposta, ou que avance diretamente após sua confirmação.
+
+Não mostre o gabarito durante o modo avaliação.
+
+### QUESTÃO 1
+
+Frase:
+
+She lives in far Rockway.
+
+Tradução:
+
+Ela mora na distante Rockway.
+
+Resposta correta:
+
+Does she live in far Rockway?
+
+### QUESTÃO 2
+
+Frase:
+
+They enjoy their English lessons.
+
+Tradução:
+
+Eles gostam das suas aulas de inglês.
+
+Resposta correta:
+
+Do they enjoy their English lessons?
+
+### QUESTÃO 3
+
+Frase:
+
+That company buys a lot of merchandise from us.
+
+Tradução:
+
+Aquela empresa compra muitas mercadorias de nós.
+
+Resposta correta:
+
+Does that company buy a lot of merchandise from us?
+
+### QUESTÃO 4
+
+Frase:
+
+It looks like rain.
+
+Tradução:
+
+Parece chuva.
+
+Resposta correta:
+
+Does it look like rain?
+
+### QUESTÃO 5
+
+Frase:
+
+He drives to Washington once a week.
+
+Tradução:
+
+Ele dirige para Washington uma vez por semana.
+
+Resposta correta:
+
+Does he drive to Washington once a week?
+
+### QUESTÃO 6
+
+Frase:
+
+The class meets on the tenth floor.
+
+Tradução:
+
+A turma se reúne no décimo andar.
+
+Resposta correta:
+
+Does the class meet on the tenth floor?
+
+### QUESTÃO 7
+
+Frase:
+
+He seems to be very busy.
+
+Tradução:
+
+Ele parece estar muito ocupado.
+
+Resposta correta:
+
+Does he seem to be very busy?
+
+### QUESTÃO 8
+
+Frase:
+
+This book belongs to her.
+
+Tradução:
+
+Este livro pertence a ela.
+
+Resposta correta:
+
+Does this book belong to her?
+
+### QUESTÃO 9
+
+Frase:
+
+You like New York.
+
+Tradução:
+
+Você gosta de Nova York.
+
+Resposta correta:
+
+Do you like New York?
+
+### QUESTÃO 10
+
+Frase:
+
+You speak French well.
+
+Tradução:
+
+Você fala bem francês.
+
+Resposta correta:
+
+Do you speak French well?
+
+### QUESTÃO 11
+
+Frase:
+
+He often goes out of town.
+
+Tradução:
+
+Ele sai frequentemente da cidade.
+
+Resposta correta:
+
+Does he often go out of town?
+
+### QUESTÃO 12
+
+Frase:
+
+I always take the same bus to work.
+
+Tradução:
+
+Eu sempre pego o mesmo ônibus para o trabalho.
+
+Resposta correta:
+
+Do I always take the same bus to work?
+
+### QUESTÃO 13
+
+Frase:
+
+They sell newspapers there.
+
+Tradução:
+
+Eles vendem jornais lá.
+
+Resposta correta:
+
+Do they sell newspapers there?
+
+### QUESTÃO 14
+
+Frase:
+
+The store opens at nine o’clock.
+
+Tradução:
+
+A loja abre às nove horas.
+
+Resposta correta:
+
+Does the store open at nine o’clock?
+
+### QUESTÃO 15
+
+Frase:
+
+It closes at five-thirty.
+
+Tradução:
+
+Ela fecha às cinco e meia.
+
+Resposta correta:
+
+Does it close at five-thirty?
+
+### QUESTÃO 16
+
+Frase:
+
+He smokes a lot.
+
+Tradução:
+
+Ele fuma muito.
+
+Resposta correta:
+
+Does he smoke a lot?
+
+# 9. SISTEMA DE CORREÇÃO
+
+Implemente uma função determinística de correção das respostas.
+
+Compare a resposta digitada com o gabarito correspondente. Antes da comparação:
+
+- Remova espaços desnecessários no início e no final.
+- Normalize sequências de espaços.
+- Ignore diferenças entre letras maiúsculas e minúsculas.
+- Aceite pontuação final opcional.
+- Trate apóstrofos tipográficos e retos de maneira consistente.
+
+Não ignore diferenças gramaticais importantes.
+
+Exemplos de erros que precisam ser identificados:
+
+“Does she lives in far Rockway?” — verbo incorreto após DOES.
+
+“Do she live in far Rockway?” — auxiliar incorreto.
+
+“She live in far Rockway?” — estrutura interrogativa incorreta para o exercício proposto.
+
+“Does she live far Rockway?” — resposta incompleta, pois omite “in”.
+
+Em geral, exija a estrutura interrogativa e os elementos lexicais da resposta correta. Não use inteligência artificial generativa como critério subjetivo de correção.
+
+Se desejar aceitar uma variante, ela deverá estar explicitamente cadastrada como uma resposta válida no banco de questões. Não aceite automaticamente qualquer frase que apenas pareça semelhante à resposta esperada.
+
+No modo avaliação, o estudante deve enviar somente uma resposta por questão. Depois do envio, bloqueie a edição daquela resposta. Registre a resposta original para o relatório.
+
+Durante a avaliação, mostre apenas uma confirmação neutra de que a resposta foi registrada. Não revele o gabarito, não informe se houve acerto e não forneça pistas antes da conclusão.
+
+No modo treino, mostre imediatamente se a resposta está correta, explique o erro quando houver e permita nova tentativa.
+
+# 10. CÁLCULO DA NOTA
+
+As 16 questões possuem o mesmo peso.
+
+Cálculo:
+
+16 questões = 100 pontos percentuais.
+
+Cada acerto vale 6,25 pontos percentuais.
+
+Nota em escala de 0 a 10:
+
+Nota = número de acertos ÷ 16 × 10.
+
+Utilize os valores calculados pelo sistema, sem estimativas ou pontuação aleatória.
+
+Exemplos:
+
+16 acertos = 100% = nota 10,0.
+
+12 acertos = 75% = nota 7,5.
+
+8 acertos = 50% = nota 5,0.
+
+0 acertos = 0% = nota 0,0.
+
+Exiba o resultado percentual com até duas casas decimais e a nota na escala de 0 a 10 com uma casa decimal.
+
+Tempo, exploração do mapa, efeitos visuais e itens coletados não podem alterar a nota gramatical. Podem existir pontos de experiência e conquistas decorativas, mas devem ficar separados do resultado acadêmico oficial.
+
+# 11. RELATÓRIO DO ESTUDANTE
+
+Ao concluir a décima sexta questão, mostre uma sequência cinematográfica de encerramento da missão.
+
+A tela final deve apresentar de forma destacada:
+
+CHRONO QUEST — MISSÃO CONCLUÍDA
+
+Inclua:
+
+- Nome completo do estudante.
+- Turma.
+- Escola, quando informada.
+- Data e hora da conclusão.
+- Tempo total de realização.
+- Quantidade de questões respondidas.
+- Número de acertos.
+- Número de erros.
+- Percentual de acertos.
+- Nota de 0 a 10.
+- Uma lista das 16 questões e das respostas efetivamente enviadas.
+- Indicação de acerto ou erro para cada resposta.
+- Gabarito de cada questão após o encerramento da avaliação.
+
+Crie uma apresentação visual clara, adequada para o professor consultar e para o estudante visualizar seu desempenho.
+
+O relatório deve apresentar o nome do aluno em tamanho legível e o percentual de acertos em destaque. O tempo utilizado também precisa ficar visível.
+
+Inclua opção de imprimir ou salvar o relatório como PDF por meio da função de impressão do navegador, sem depender de um serviço pago.
+
+Inclua também a opção de retornar ao menu principal depois que o relatório for concluído.
+
+O reinício de uma avaliação deve criar uma nova tentativa, sem apagar o resultado anterior.
+
+# 12. PAINEL DO PROFESSOR
+
+Crie uma área separada chamada PAINEL DO PROFESSOR.
+
+Nela, o professor deverá conseguir:
+
+- Consultar avaliações concluídas.
+- Localizar estudantes por nome.
+- Filtrar resultados por turma.
+- Visualizar data, horário, nota, percentual de acertos e tempo utilizado.
+- Abrir o relatório detalhado de cada estudante.
+- Exportar os resultados em CSV.
+- Exportar relatórios em JSON.
+- Consultar estatísticas da turma.
+- Identificar as questões com maior quantidade de erros.
+- Verificar quais alunos ainda não possuem avaliação registrada, caso exista uma lista de estudantes cadastrada.
+
+O sistema não deve inventar resultados ou preencher o painel com estudantes fictícios.
+
+Inclua uma função para cadastrar uma lista de alunos por turma através de um arquivo CSV, com validação dos dados. Essa lista servirá para conferir quem concluiu a avaliação e quem ainda não tem resultado registrado.
+
+Use persistência centralizada com Firebase/Firestore quando for possível configurar corretamente a integração no projeto.
+
+Se o banco de dados não puder ser configurado de imediato, implemente uma alternativa funcional com armazenamento local e exportação de relatórios. Mostre claramente se os dados estão apenas no dispositivo ou sincronizados com um banco central.
+
+Nunca apresente como sincronizados dados que estejam apenas no armazenamento local do navegador.
+
+O painel deverá ter acesso controlado. Caso seja implementada autenticação, utilize um mecanismo real de autenticação compatível com a arquitetura escolhida. Não deixe uma senha secreta fixa no código do navegador como se fosse uma proteção segura.
+
+Proteja as informações individuais dos estudantes contra acesso público e não exiba respostas de outros alunos durante uma avaliação em andamento.
+
+# 13. TRILHA SONORA — ONE SHOT TONIGHT
+
+Inclua a música “One Shot Tonight” como parte da identidade do jogo.
+
+Existe um arquivo de áudio fornecido separadamente pelo professor, com o nome:
+
+Hangin' Tough Till Morning - One Shot Tonight(1).wav
+
+Quando esse arquivo for anexado ao projeto no Google AI Studio, utilize o áudio real como trilha sonora. Importe o arquivo para o projeto e configure corretamente sua reprodução.
+
+Não gere outra música para substituir a original quando o arquivo estiver disponível. Não utilize serviços externos para tentar localizar ou baixar a faixa.
+
+Se o arquivo não estiver disponível no ambiente de desenvolvimento, crie uma interface funcional de configuração de áudio que permita carregá-lo posteriormente. Não simule uma reprodução inexistente.
+
+Implemente um reprodutor de áudio com:
+
+- Reproduzir e pausar.
+- Controle de volume.
+- Silenciar e ativar o som.
+- Indicador de reprodução.
+- Opção de desativar completamente a música.
+- Tratamento de erro caso o navegador não consiga carregar o arquivo.
+
+Não inicie a reprodução automaticamente. O aluno deverá ativar o áudio por meio de uma ação explícita.
+
+No modo avaliação, deixe a trilha desativada por padrão para evitar distrações, permitindo que o professor altere essa configuração antes do início da prova.
+
+A música também deverá ficar disponível em uma área opcional chamada MUSIC LOUNGE.
+
+Essa área terá aparência de um estúdio musical futurista, com iluminação sincronizada de forma decorativa com a reprodução, elementos de áudio e um painel para estudar a letra.
+
+Não faça da música uma condição para concluir a avaliação gramatical.
+
+# 14. MUSIC LOUNGE — ESTUDO DA LETRA
+
+Crie uma sala musical opcional para a música “One Shot Tonight”, cujo título pode ser apresentado como “Uma chance esta noite”.
+
+Essa área não fará parte da nota oficial das 16 questões.
+
+Apresente as seções da música organizadas em versos, pré-refrão, refrão e ponte. Cada linha deverá mostrar:
+
+1. A frase em inglês.
+2. A tradução em português abaixo.
+3. Uma aproximação de pronúncia em português abaixo da tradução.
+
+Utilize o conteúdo abaixo como material de estudo.
+
+## VERSO 1
+
+Got that feeling pulling on my sleeve
+
+Sinto aquela sensação puxando minha manga.
+
+Pronúncia: Gót dét fí-lin pú-lin on mái slív.
+
+Morning sun and everything's okay
+
+Sol da manhã e está tudo bem.
+
+Pronúncia: Mór-nin sãn én é-vri-thins ou-kêi.
+
+Turn the radio up and I believe
+
+Aumento o volume do rádio e acredito.
+
+Pronúncia: Tãrn dâ rêi-diou âp én ái bi-lív.
+
+Tonight we're gonna find a better way
+
+Que esta noite vamos encontrar um caminho melhor.
+
+Pronúncia: Tu-náit uâr gô-na fáind a bé-râr uêi.
+
+## PRÉ-REFRÃO
+
+And I won't look back
+
+E eu não vou olhar para trás.
+
+Pronúncia: Én-dái uount luc béc.
+
+Yeah I know the way
+
+Sim, eu sei o caminho.
+
+Pronúncia: Ié ái nôu dâ uêi.
+
+Gonna chase the light
+
+Vou perseguir a luz.
+
+Pronúncia: Gô-na tchêis dâ láit.
+
+To the break of day
+
+Até o raiar do dia.
+
+Pronúncia: Tu dâ brêic óv dêi.
+
+## REFRÃO
+
+Tell me why we only get one shot
+
+Diga-me por que só temos uma chance.
+
+Pronúncia: Tél mi uái uí ôun-li guét uãn shót.
+
+Tell me why we ever stop to wait
+
+Diga-me por que sequer paramos para esperar.
+
+Pronúncia: Tél mi uái uí é-vâr stóp tu uêit.
+
+When the night is ours and it's so hot
+
+Quando a noite é nossa e está tão intensa.
+
+Pronúncia: Uén dâ náit iz áurs én íts sôu rót.
+
+Tell me why we're standing at the gate
+
+Diga-me por que estamos parados no portão.
+
+Pronúncia: Tél mi uái uâr stén-din ét dâ guêit.
+
+Why, why, why, why, why, why, why, why
+
+Por que, por que, por que, por que, por que, por que, por que, por que.
+
+Pronúncia: Uái, uái, uái, uái, uái, uái, uái, uái.
+
+Tell me... why
+
+Diga-me... por que.
+
+Pronúncia: Tél mi... uái.
+
+## VERSO 2
+
+Heartbeat keeping time with mine
+
+Coração batendo no mesmo tempo que o meu.
+
+Pronúncia: Rárt-bit kí-pin táim uíth máin.
+
+Every city neon in my eyes
+
+O neon de todas as cidades em meus olhos.
+
+Pronúncia: É-vri sí-ti ní-on in mái áis.
+
+Take my hand and leave the world behind
+
+Pegue minha mão e deixe o mundo para trás.
+
+Pronúncia: Têic mái rénd én lív dâ uârld bi-ráind.
+
+No more waiting for the compromise
+
+Chega de esperar por um meio-termo.
+
+Pronúncia: Nôu mór uêi-tin for dâ kóm-pro-máis.
+
+O pré-refrão e o refrão devem ser reutilizados nas repetições posteriores da música, sem duplicar desnecessariamente os mesmos dados.
+
+## PONTE
+
+Don't you know the moment's ours
+
+Você não sabe que o momento é nosso?
+
+Pronúncia: Dount iu nôu dâ môu-mênts áurs.
+
+Don't you know we got the power
+
+Você não sabe que nós temos o poder?
+
+Pronúncia: Dount iu nôu uí gót dâ pá-uâr.
+
+Shout it out from every tower
+
+Grite isso de cada torre.
+
+Pronúncia: Sháu-ri-ráut from é-vri tá-uâr.
+
+This is our forever hour
+
+Esta é a nossa hora para sempre.
+
+Pronúncia: Dís iz áur fo-ré-vâr á-uâr.
+
+A estrutura de exibição da letra deverá seguir a sequência musical:
+
+Verso 1 → Pré-refrão → Refrão → Verso 2 → Pré-refrão → Refrão → Ponte → Refrão final.
+
+Use as traduções e as aproximações de pronúncia fornecidas. Não afirme que as linhas estão sincronizadas palavra por palavra com o áudio, pois não foram fornecidos marcadores temporais para essa sincronização.
+
+A sala musical deve permitir que o estudante escute, leia e revise as linhas individualmente.
+
+# 15. EXPERIÊNCIA DE APRENDIZAGEM
+
+O jogo deverá equilibrar exploração e aprendizado.
+
+Durante o modo treino, implemente um sistema de ajuda gradual:
+
+NÍVEL DE AJUDA 1 — LEMBRETE
+
+“Escolha DO ou DOES de acordo com o sujeito.”
+
+NÍVEL DE AJUDA 2 — ESTRUTURA
+
+“Auxiliar + sujeito + verbo na forma básica + complemento?”
+
+NÍVEL DE AJUDA 3 — EXPLICAÇÃO ESPECÍFICA
+
+Explique o uso de DO ou DOES e indique quando o verbo precisa voltar à forma básica.
+
+Não exiba a resposta completa antes de o aluno tentar responder, a menos que ele solicite uma explicação depois de errar.
+
+Na avaliação oficial, todas essas ajudas devem permanecer desativadas.
+
+Adicione conquistas visuais opcionais, como:
+
+- PRIMEIRO PORTAL ABERTO.
+- EXPLORADOR DE CHRONO CITY.
+- MESTRE DO SIMPLE PRESENT.
+- PORTAL FINAL CONCLUÍDO.
+
+Essas conquistas não devem alterar a nota escolar.
+
+# 16. INTERFACE E ACESSIBILIDADE
+
+Garanta que:
+
+- O texto em inglês seja legível dentro do ambiente do jogo.
+- As traduções fiquem logo abaixo das frases correspondentes.
+- As caixas de resposta sejam grandes e fáceis de selecionar.
+- Os botões tenham nomes claros.
+- Os elementos interativos mostrem visualmente quando podem ser usados.
+- A interface funcione em diferentes resoluções de tela.
+- Os painéis não cubram desnecessariamente a área central do jogo.
+- Haja contraste adequado e opção de reduzir efeitos visuais.
+- As animações não impeçam o aluno de responder.
+- O jogo pause corretamente e permita retomar de onde parou.
+- O jogador saiba sempre qual é a questão atual e quantas faltam.
+- O preenchimento de uma resposta não seja perdido por uma animação, falha gráfica ou abertura de menu.
+
+Não use efeitos que reduzam tanto a legibilidade que dificultem a avaliação.
+
+# 17. INTEGRIDADE DOS DADOS
+
+A avaliação deve ser reproduzível e consistente.
+
+Para cada tentativa oficial, guarde:
+
+- Identificador da tentativa.
+- Nome completo.
+- Turma.
+- Escola, quando informada.
+- Data e horário.
+- Resposta digitada em cada questão.
+- Resultado individual de cada resposta.
+- Número de acertos.
+- Percentual de acertos.
+- Nota de 0 a 10.
+- Tempo de realização.
+
+O aluno deve poder finalizar uma avaliação incompleta apenas se o professor permitir essa configuração. Por padrão, exija a resposta das 16 questões para gerar uma nota final.
+
+Evite registrar nomes ou notas fictícias no banco de dados.
+
+A nota oficial deve resultar exclusivamente das 16 respostas e do gabarito definido neste projeto.
+
+Não envie nomes completos, turmas ou respostas dos estudantes para APIs externas de inteligência artificial para fazer a correção.
+
+Se o jogo for atualizado no futuro, mantenha os registros anteriores e identifique a versão do banco de questões que gerou cada resultado.
+
+# 18. TESTES OBRIGATÓRIOS
+
+Antes de considerar o trabalho concluído, teste os principais fluxos e corrija os erros encontrados.
+
+Verifique especificamente:
+
+1. O estudante consegue iniciar uma sessão depois de preencher nome e turma.
+2. Os controles de primeira pessoa funcionam.
+3. As oito áreas do mapa podem ser percorridas.
+4. Os 16 terminais exibem a questão correta.
+5. Todas as traduções correspondem às questões.
+6. O gabarito tem exatamente as 16 respostas especificadas.
+7. A correção aceita diferenças irrelevantes de maiúsculas, espaços e pontuação final.
+8. A correção não aceita automaticamente erros de auxiliar ou de forma verbal.
+9. Cada resposta oficial pode ser enviada somente uma vez.
+10. A nota é calculada corretamente.
+11. A avaliação não revela respostas corretas antes da conclusão.
+12. O relatório mostra os dados reais da tentativa.
+13. É possível exportar os resultados para CSV e JSON.
+14. Os relatórios continuam disponíveis conforme a persistência efetivamente configurada.
+15. O áudio pode ser ativado, pausado, silenciado e ajustado.
+16. O aplicativo informa claramente quando um arquivo de áudio não está disponível.
+17. O modo treino fornece explicações e não modifica a nota oficial.
+18. O aplicativo funciona sem depender de chamadas Gemini para corrigir questões.
+19. A experiência é utilizável em computadores e em telas menores.
+20. Não existem botões importantes sem funcionalidade, telas vazias, erros de navegação ou rotas inexistentes.
+
+Não declare que um teste passou sem verificar seu resultado.
+
+# 19. ORDEM DE IMPLEMENTAÇÃO
+
+Desenvolva o projeto nesta ordem de prioridade:
+
+PRIORIDADE 1 — JOGO FUNCIONAL
+
+Menu, cadastro, ambiente 3D, movimentação, terminais e navegação entre as 16 questões.
+
+PRIORIDADE 2 — AVALIAÇÃO
+
+Banco de questões, respostas corretas, correção, controle de tentativas e cálculo das notas.
+
+PRIORIDADE 3 — RELATÓRIOS
+
+Tela de resultado, armazenamento, painel do professor e exportação.
+
+PRIORIDADE 4 — APRESENTAÇÃO AAA
+
+Iluminação, materiais, partículas, animações, efeitos visuais, transições e aprimoramento dos cenários.
+
+PRIORIDADE 5 — ÁUDIO E MUSIC LOUNGE
+
+Carregamento da trilha, controles de reprodução, letra bilíngue e área musical opcional.
+
+PRIORIDADE 6 — TESTES E REFINAMENTO
+
+Corrigir bugs, melhorar desempenho e assegurar que o aplicativo inteiro permaneça funcional.
+
+Não tente implementar tudo em uma única tela ou em um único componente enorme. Construa e valide as partes de forma incremental, mantendo o projeto funcional a cada etapa.
+
+# 20. ENTREGA FINAL
+
+Entregue um aplicativo web executável dentro do Google AI Studio Build, com código organizado e uma prévia funcional.
+
+Ao terminar, apresente um resumo técnico contendo:
+
+- Funcionalidades efetivamente implementadas.
+- Controles do jogo.
+- Estrutura das oito fases.
+- Funcionamento da avaliação e da correção.
+- Sistema de armazenamento disponível.
+- Forma de exportar os resultados.
+- Situação do carregamento da música.
+- Dependências ou configurações adicionais que ainda sejam necessárias.
+
+Se alguma funcionalidade depender de uma configuração externa, explique exatamente qual é a pendência. Não esconda funcionalidades incompletas atrás de botões aparentemente prontos.
+
+A prioridade absoluta é entregar um jogo 3D realmente jogável e uma avaliação gramatical confiável, com as 16 questões preservadas e os resultados registrados corretamente.
+
+Comece agora criando o projeto funcional, e não apenas descrevendo como ele poderia ser feito.
